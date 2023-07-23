@@ -1,0 +1,73 @@
+<!-- toggle button -->
+<div
+  class="container toggleButton d-flex align-items-center"
+  style="gap: 5px"
+  (click)="toggleSidebar()"
+>
+  <mat-icon svgIcon="segment"></mat-icon>
+  <div class="toggleText">Assesment</div>
+</div>
+<div
+  class="container desktop border"
+  [ngClass]="{ 'sidebar-hidden': isSidebarHidden }"
+  style="height: 100vh; background-color: white"
+>
+  <div class="flex-column">
+    <div class="insideFlex-column">
+      <mat-icon svgIcon="dashboard"></mat-icon>
+      <div class="tabText">Dashboard</div>
+    </div>
+    <div class="insideFlex-column active">
+      <mat-icon svgIcon="note_alt"></mat-icon>
+      <div class="tabActivetext">Assesment</div>
+    </div>
+    <div class="insideFlex-column">
+      <mat-icon svgIcon="quiz"></mat-icon>
+      <div class="tabText">My Library</div>
+    </div>
+
+    <div class="seperator"></div>
+    <div class="admin-pill">Admin</div>
+    <div class="insideFlex-column">
+      <mat-icon svgIcon="admin_meds"></mat-icon>
+      <div class="tabText">
+        Round <br />
+        Status
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- side bar for mobile -->
+
+<div
+  class="container mobile border"
+  [ngClass]="{ 'sidebar-hidden': isSidebarHidden }"
+  style="height: 100vh; background-color: white"
+>
+  <div class="flex-start">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <div class="tabText">Menu</div>
+      <mat-icon (click)="toggleSidebar()">close</mat-icon>
+    </div>
+    <div class="d-flex justify-content-start align-items-center">
+      <mat-icon svgIcon="dashboard"></mat-icon>
+      <div class="tabText">Dashboard</div>
+    </div>
+    <div class="d-flex justify-content-start align-items-center activeMobile">
+      <mat-icon svgIcon="note_alt"></mat-icon>
+      <div class="tabActivetext">Assesment</div>
+    </div>
+    <div class="d-flex justify-content-start align-items-center">
+      <mat-icon svgIcon="quiz"></mat-icon>
+      <div class="tabText">My Library</div>
+    </div>
+
+    <div class="seperator"></div>
+    <div class="admin-pill">Admin</div>
+    <div class="d-flex justify-content-start align-items-center">
+      <mat-icon svgIcon="admin_meds"></mat-icon>
+      <div class="tabText">Round Status</div>
+    </div>
+  </div>
+</div>

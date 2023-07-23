@@ -1,0 +1,132 @@
+.flex-column {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+
+  padding-top: 16px;
+}
+.insideFlex-column {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px 10px;
+}
+.active {
+  border-radius: 8px;
+  border: 1px solid var(--secondary-1, #0073e6);
+  background: #e5f1fc;
+}
+.tabText {
+  color: #1c4980;
+  font-feature-settings: "clig" off, "liga" off;
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 140%;
+  background: transparent;
+}
+.tabActivetext {
+  color: var(--secondary-1, #0073e6);
+  font-feature-settings: "clig" off, "liga" off;
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 140%;
+}
+.seperator {
+  border-top: 1px dashed #bacbd5;
+  width: 70%;
+  margin-top: 27px;
+}
+.admin-pill {
+  display: flex;
+  height: 18px;
+  padding: 6px 8px;
+  align-items: center;
+  gap: 6px;
+  border-radius: 22px;
+  border: 1px solid var(--accent-new-red, #d63500);
+  background: var(--accent-red-light, #fbebea);
+
+  color: var(--accent-new-red, #d63500);
+  font-family: Inter;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-top: 16px;
+}
+
+.d-flex {
+  gap: 10px;
+  width: 100%;
+}
+.flex-start {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  width: 100%;
+  padding: 30px 10px;
+}
+.activeMobile {
+  border-radius: 8px;
+  padding: 10px;
+  border: 1px solid var(--secondary-1, #0073e6);
+  background: #e5f1fc;
+}
+/* Styles for the sidebar */
+.container {
+  background-color: #f0f0f0; /* Adjust the background color as needed */
+  z-index: 1000;
+  transition: transform 0.3s ease-in-out; /* The animation property */
+  overflow-y: auto;
+}
+
+/* Styles for the sidebar when hidden */
+.mobile.sidebar-hidden {
+  height: 0px !important;
+  transform: translateX(-100%);
+  /* Slide the sidebar to the left to hide it */
+}
+
+/* Styles for the main content area */
+// .main-content {
+//   margin-left: 250px; /* Adjust the margin to account for the visible sidebar width */
+//   /* Add any other styles for your main content area */
+// }
+.toggleButton {
+  height: 50px;
+  padding-left: 20px;
+  background-color: white;
+  display: none !important;
+}
+
+.toggleText {
+  color: var(--text-100, #1c4980);
+  font-feature-settings: "clig" off, "liga" off;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 140%; /* 22.4px */
+}
+
+@media only screen and (max-width: 600px) {
+  .desktop {
+    display: none;
+  }
+  .toggleButton {
+    display: flex !important;
+  }
+}
+@media only screen and (min-width: 600px) {
+  .mobile {
+    display: none;
+  }
+}

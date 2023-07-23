@@ -1,0 +1,88 @@
+<div class="modal-header">
+  <h4 class="modal-title">Create new assessment</h4>
+  <mat-icon (click)="activeModal.dismiss('Cross click')">close</mat-icon>
+</div>
+<div class="modal-body">
+  <form [formGroup]="myForm">
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label"
+        >Name of Assesment
+      </label>
+      <input
+        type="text"
+        formControlName="name"
+        class="form-control"
+        id="exampleFormControlInput1"
+        placeholder="Type Here"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label"
+        >Purpose of the test is
+      </label>
+      <select class="form-select" aria-label="Default select example">
+        <option selected>Select</option>
+        <option value="1">Quiz</option>
+        <option value="2">Test</option>
+        <option value="3">Hiring</option>
+      </select>
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label"
+        >Description
+      </label>
+      <select class="form-select" aria-label="Default select example">
+        <option selected>Select</option>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+      </select>
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Skills </label>
+      <mat-form-field class="example-chip-list" appearance="outline">
+        <mat-chip-grid #chipGrid aria-label="Enter fruits">
+          <mat-chip-row
+            *ngFor="let fruit of fruits"
+            (removed)="remove(fruit)"
+            [editable]="true"
+            (edited)="edit(fruit, $event)"
+            [aria-description]="'press enter to edit ' + fruit.name"
+          >
+            <span class="chipText">{{ fruit.name }}</span>
+            <button matChipRemove [attr.aria-label]="'remove ' + fruit.name">
+              <mat-icon>cancel</mat-icon>
+            </button>
+          </mat-chip-row>
+        </mat-chip-grid>
+        <input
+          placeholder="Add Skills"
+          [matChipInputFor]="chipGrid"
+          [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+          [matChipInputAddOnBlur]="addOnBlur"
+          (matChipInputTokenEnd)="add($event)"
+        />
+      </mat-form-field>
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Duration </label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="duration"
+        id="exampleFormControlInput1"
+        placeholder="HH:MM:SS"
+      />
+    </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <button
+    type="button"
+    class="btn btn-primary"
+    style="width: 100%"
+    (click)="activeModal.close('Close click'); onClick()"
+  >
+    Save
+  </button>
+</div>

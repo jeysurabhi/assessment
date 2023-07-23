@@ -1,0 +1,41 @@
+mat-form-field {
+  width: 100%;
+}
+label {
+  color: var(--text-100, #1c4980);
+  text-align: center;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+::placeholder {
+  color: var(--primary-50, #8da4bf);
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+option {
+  color: var(--primary-50, #8da4bf);
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.mat-mdc-standard-chip:not(.mdc-evolution-chip--disabled) {
+  /* background-color: var(--mdc-chip-elevated-container-color); */
+  border-radius: 22px;
+  background: var(--accent-blue-light, #ddedff);
+}
+.chipText {
+  color: var(--text-100, #1c4980);
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
